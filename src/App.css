@@ -6,6 +6,7 @@
   list-style: none;
 }
 nav{
+  text-decoration: none;
   /* position: fixed;
   top: 0;
   background: rgb(0, 0,0,0.4); */
@@ -20,17 +21,18 @@ nav{
   z-index: 1;
 }
 .nav-left{
+  text-decoration: none;
   width: 80%;
   display: flex;
   flex-grow: row;
+  color: red;
 }
 nav ul{ 
-  list-style: none;
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   color: #aaa;
-  text-decoration: none;
+  
   font-size: 15px;
   font-weight: 500;
   padding: 8px 50px;
@@ -40,7 +42,6 @@ nav ul{
 }
 
 nav ul li{
-  list-style:none;
   margin: 0 15px;
 }
 .fa-search{
