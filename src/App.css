@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
+  list-style: none;
 }
 nav{
   /* position: fixed;
@@ -24,6 +25,7 @@ nav{
   flex-grow: row;
 }
 nav ul{ 
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -38,6 +40,7 @@ nav ul{
 }
 
 nav ul li{
+  list-style:none;
   margin: 0 15px;
 }
 .fa-search{
@@ -78,6 +81,8 @@ a {
 
 .link {
   color: white;
+  text-decoration: none;
+  list-style-type: none;
 }
 
 .bold {
@@ -127,6 +132,7 @@ a {
  }
   
   .nav-menu {
+      list-style: none;
       margin: 0;
       display: flex;
       flex-direction: column;
@@ -140,6 +146,7 @@ a {
   }
 
   .nav-menu.active {
+      list-style: none;
       background: #181a1d;
       left: 0;
       opacity: 1;
