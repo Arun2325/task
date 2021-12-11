@@ -6,7 +6,7 @@ import Slider from "react-slick";
 
 
 function SampleNextArrow(props) {
-    const { className, onClick } = props;
+    const { onClick } = props;
     return (
       <div className='slick-next' onClick={onClick}>
          {/* <i class="fas fa-arrow-left" style={{color:"black"}}></i> */}
@@ -16,7 +16,7 @@ function SampleNextArrow(props) {
   }
   
 function SamplePrevArrow(props) {
-    const { className, onClick } = props;
+    const {  onClick } = props;
     return (
       <div className='slick-prev'  onClick={onClick}>
        {/* <i class="fas fa-arrow-right" style={{color:"black"}} ></i> */}
@@ -32,7 +32,7 @@ export default class Home extends Component {
     
       this.state = {
          post: [],
-         error:''
+        //  error:''
       };
     };
    
@@ -42,7 +42,7 @@ export default class Home extends Component {
         .then(response =>{
             console.log(response.data)
             this.setState({post:response.data})
-            this.Setstate({dataLoaded: true})
+            // this.Setstate({dataLoaded: true})
         })
         .catch(error =>{
             this.setState({error: "Check your Endpoint"})
@@ -61,7 +61,47 @@ export default class Home extends Component {
             slidesToShow: 7,
             slidesToScroll: 3,
             nextArrow: <SampleNextArrow />,
-            prevArrow :  <SamplePrevArrow />
+            prevArrow :  <SamplePrevArrow />,
+            responsive: [
+              {
+                breakpoint: 1024,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3,
+                  infinite: true,
+                  dots: true
+                }
+              },
+              {
+                breakpoint: 600,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2,
+                  initialSlide: 2
+                }
+              },
+              {
+                breakpoint: 480,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 1
+                }
+              },
+              {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 1
+                }
+              },
+              {
+                breakpoint: 540,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 1
+                }
+              }
+            ]
           };
         console.log(post)
         return (
