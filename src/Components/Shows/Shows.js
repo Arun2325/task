@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { Component } from 'react'
 import Cards from './Cards'
 
-export default class TvShows extends Component {
+export default class Shows extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -28,7 +28,7 @@ export default class TvShows extends Component {
     render() {
         const { posts,dataLoaded,error} = this.state;
         return (
-            <div style={{borderRadius:'10px'}}>
+            <div>
                 <div className="row m-5">
                     {dataLoaded ? posts.map((item, index) =>
                         <div className="col-6 col-md-2 col-sm-2 cardLayout container-fluid">

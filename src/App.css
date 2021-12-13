@@ -177,5 +177,85 @@ a {
   
   
 }
+.drop {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
 
+.dropdown {
+  position: relative;
+  display: inline-block;
 
+}
+
+.dropdown-content {
+  margin-top: 2px;
+  display: none;
+  position: absolute;
+  background-color: #4e4e4e;
+  opacity: 0.8;
+  color: white;
+  right: -10px;
+  min-width: 260px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content:hover {
+  color: black;
+}
+
+.dropdown-content a:hover {
+  background-color: #c3c3c3
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.imgSize {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.mobile-nav {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.mobile-imgSize {
+  width: 30px;
+}
+
+.imgNames {
+  color: white;
+  font-size: 12px;
+}
+
+/* git add --all
+git commit -m "files chnaged"
+git push
+npm install react-redux
+npm install --save redux-devtools-extension
+npm i redux-logger */

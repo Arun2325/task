@@ -2,7 +2,8 @@
     color: white;
 }
 .left-align{
-  color: white;
+    color: white;
+    padding-top: 30px;
     margin-left: 60px;
 }
 .fa-arrow-right,.fa-arrow-left{
