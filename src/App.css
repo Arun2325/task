@@ -208,14 +208,14 @@ a {
 }
 
 .dropdown-content a {
-  color: black;
+  color: white;
   padding: 10px 16px;
   text-decoration: none;
   display: block;
 }
 
 .dropdown-content:hover {
-  color: black;
+  color: white;
 }
 
 .dropdown-content a:hover {
@@ -235,14 +235,7 @@ a {
   margin-right: 10px;
 }
 
-.mobile-nav {
-  background-color: rgba(0, 0, 0, 0.6);
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  z-index: 1;
-}
+
 
 .mobile-imgSize {
   width: 30px;

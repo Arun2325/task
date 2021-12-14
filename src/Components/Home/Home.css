@@ -1,10 +1,11 @@
 .fa-chevron-right{
     color: white;
+    margin-left: 10px;
 }
 .left-align{
-    color: white;
-    padding-top: 30px;
-    margin-left: 60px;
+    color: white ;
+    padding-top: 30px ;
+    margin-left: 60px ;
 }
 .fa-arrow-right,.fa-arrow-left{
     font-size: 30px;

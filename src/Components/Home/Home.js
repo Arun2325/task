@@ -3,121 +3,30 @@ import React, { Component } from 'react'
 import SlideLayout from '../Slider/SlideLayout'
 import './Home.css'
 import Slider from "react-slick";
+import HoriSlider from '../H-Slider/HoriSlider';
+import { Link } from 'react-router-dom';
 
 
-function SampleNextArrow(props) {
-    const { onClick } = props;
-    return (
-      <div className='slick-next' onClick={onClick}>
-         {/* <i class="fas fa-arrow-left" style={{color:"black"}}></i> */}
-         <button className='arr'><i class="fas fa-arrow-right"  ></i></button>
-      </div>
-    );
-  }
-  
-function SamplePrevArrow(props) {
-    const {  onClick } = props;
-    return (
-      <div className='slick-prev'  onClick={onClick}>
-       {/* <i class="fas fa-arrow-right" style={{color:"black"}} ></i> */}
-       <button className='arr'> <i class="fas fa-arrow-left "  ></i></button>
-      
-      </div>
-    );
-  }
+
 
 export default class Home extends Component {
-    constructor(props) {
-      super(props)
     
-      this.state = {
-         post: [],
-        //  error:''
-      };
-    };
-   
-      
-    componentDidMount(){
-        axios.get("https://api.tvmaze.com/shows")
-        .then(response =>{
-            console.log(response.data)
-            this.setState({post:response.data})
-            // this.Setstate({dataLoaded: true})
-        })
-        .catch(error =>{
-            this.setState({error: "Check your Endpoint"})
-        })
-
-    }
     
     render() {
 
         
-        const {post,error,dataLoaded} = this.state;
-        const settings = {
-            dots: false,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 7,
-            slidesToScroll: 3,
-            nextArrow: <SampleNextArrow />,
-            prevArrow :  <SamplePrevArrow />,
-            responsive: [
-              {
-                breakpoint: 1024,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 3,
-                  infinite: true,
-                  dots: true
-                }
-              },
-              {
-                breakpoint: 600,
-                settings: {
-                  slidesToShow: 2,
-                  slidesToScroll: 2,
-                  initialSlide: 2
-                }
-              },
-              {
-                breakpoint: 480,
-                settings: {
-                  slidesToShow: 2,
-                  slidesToScroll: 1
-                }
-              },
-              {
-                breakpoint: 768,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 1
-                }
-              },
-              {
-                breakpoint: 540,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 1
-                }
-              }
-            ]
-          };
-        console.log(post)
+       
         return (
             <div className='body'>
                 <SlideLayout/>
                
-                    <h3 className='left-align'>New on Liv <i class="fas fa-chevron-right"></i> </h3>
-                    <Slider {...settings}>
-                   
-                    { post.map( item =>
-                     <div className='row__posters'><img className='row__poster' src={item.image.medium} alt="" /></div>
-                            
-                        )
-                    }
-                   
-                    </Slider>
+                    <Link to='/games' style={{textDecoration:'none'}}><h3 className='left-align'>New on Liv <i class="fas fa-chevron-right"></i> </h3></Link>
+                    <HoriSlider/>
+                    <Link to='/originals' style={{textDecoration:'none'}}><h3 className='left-align'>Liv Originals<i class="fas fa-chevron-right"></i> </h3></Link>
+                    <HoriSlider/>
+                    <Link to='/movie' style={{textDecoration:'none'}}><h3 className='left-align'>Movies<i class="fas fa-chevron-right"></i> </h3></Link>
+                    <HoriSlider/>
+                    
                 
                 
             </div>

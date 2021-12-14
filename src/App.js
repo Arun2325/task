@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.css';
-import { Provider } from 'react-redux';
-import store from './Redux/Store'
 import Footer from './Components/Footer/Footer';
 import Navbar from './Components/Navbar/Navbar';
 
@@ -13,11 +11,15 @@ import Movies from './Components/Movie/Movies';
 import Premium from './Components/Premium/Premium';
 import Games from './Components/Game/Games';
 import TvShows from './Components/TvShows/TvShows';
+import Signin from './Components/Login/SignIn';
+import Signup from './Components/Login/SignUp';
+import Otp from './Components/OTP/Otp';
+import MovieDetails from './Components/MovieDetails/MovieDetails';
 
 
 function App() {
   return (
-    <Provider store={store}>
+   
     <div>
     <Router>
       <Navbar/>
@@ -29,12 +31,16 @@ function App() {
           <Route path="/movie"  component={Movies} />
           <Route path="/premium"  component={Premium} />
           <Route path="/games"  component={Games} />
+          <Route path="/signin"  component={Signin} />
+          <Route path="/signup"  component={Signup} />
+          <Route path="/otp"  component={Otp} />
+          <Route path="/movie-details"  component={MovieDetails} />
         </Switch>
       <Footer/>
     </Router>
     
     </div>
-    </Provider>
+  
   );
 }
 

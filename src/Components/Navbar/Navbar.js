@@ -23,7 +23,7 @@ class Navbar extends Component {
             <div>
                 <nav>
                     <Link to='/'>
-                     <img src='logo.png' alt='logo' className='logo'></img></Link>
+                     <img src='logo.png' alt='logo' className='logo' onClick={this.handleClick}></img></Link>
                     <div className="menu-icon" onClick={this.handleClick}>
                     <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </div>

@@ -1,5 +1,7 @@
 import axios from 'axios'
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import MovieDetails from '../MovieDetails/MovieDetails'
 import Cards from './Cards'
 
 export default class Shows extends Component {
@@ -32,7 +34,13 @@ export default class Shows extends Component {
                 <div className="row m-5">
                     {dataLoaded ? posts.map((item, index) =>
                         <div className="col-6 col-md-2 col-sm-2 cardLayout container-fluid">
-                            <Cards key={index} data={item} />
+                           <Link to={{
+                                    pathname: "/movie-details",
+                                    state: {
+                                        items: item
+                                        },
+                                }}>
+                                <Cards key={index} data={item} /></Link>
                         </div>) : <div className="error">{error}</div>
                     }
                 </div>
