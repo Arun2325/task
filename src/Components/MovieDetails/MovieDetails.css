@@ -4,11 +4,6 @@
     padding-left: 70px;
     padding-bottom: 70px;
     padding-right: 70px;
-    border-radius: 90px;
-}
-.img-comtainer:hover{
-    transition: transform 450ms;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .bold-line{
     font-size: 20px;
@@ -16,4 +11,14 @@
 }
 .fa-star{
     color: yellow;
+}
+.my-anchor-css-class{
+    text-decoration: none;
+    color: yellow;
+}
+.my-anchor-css-class:hover{
+    color: darkgoldenrod;
+}
+.content-css span{
+   
 }

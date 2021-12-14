@@ -1,7 +1,6 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import MovieDetails from '../MovieDetails/MovieDetails'
 import Cards from './Cards'
 
 export default class Shows extends Component {

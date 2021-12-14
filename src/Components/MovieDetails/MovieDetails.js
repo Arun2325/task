@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Container,Row,Col } from 'react-bootstrap';
 import './MovieDetails.css'
+import ShowMoreText from "react-show-more-text";
 
 
 class MovieDetails extends Component {
@@ -29,8 +30,18 @@ class MovieDetails extends Component {
                              <h6 className="left-align">Genres : <span className='bold-line'>{post.items.items.genres[0]} </span><i class="fas fa-grip-lines-vertical"></i><span className='bold-line'>{post.items.items.genres[1]} </span> <i class="fas fa-grip-lines-vertical"></i> <span className='bold-line'>{post.items.items.genres[2]} </span></h6> 
                              <h6 className="left-align">Rating : <span className='bold-line'>{post.items.items.rating.average} </span><i class="fas fa-star"></i></h6>
                              <h6 className="left-align">Total Runtime : <span className='bold-line'>{post.items.items.runtime} Mins </span></h6>
-                             <h6 className="left-align">Summary :</h6>
-                             <p className="left-align">{post.items.items.summary}</p>
+                             <h6 className="left-align">Summary :<ShowMoreText
+                                    lines={2}
+                                    more="Show more"
+                                    less="Show less"
+                                    className="content-css"
+                                    anchorClass="my-anchor-css-class"
+                                    onClick={this.executeOnClick}
+                                    expanded={false}
+                                    truncatedEndingComponent={"... "}
+                                ><p>{post.items.items.summary}</p>
+                            </ShowMoreText>
+                            </h6>
                             </Col>
                          <Col> <img className='img-comtainer' src={post.items.items.image.original} alt="" />
                     

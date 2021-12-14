@@ -17,6 +17,7 @@ import Otp from './Components/OTP/Otp';
 import MovieDetails from './Components/MovieDetails/MovieDetails';
 
 
+
 function App() {
   return (
    

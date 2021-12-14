@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Slider from "react-slick";
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 
 function SampleNextArrow(props) {
     const { onClick } = props;
@@ -104,7 +105,12 @@ export class HoriSlider extends Component {
                  <Slider {...settings}>
                    
                    { post.map( item =>
-                    <div className='row__posters'><img className='row__poster' src={item.image.medium} alt="" /></div>
+                    <div className='row__posters'> <Link to={{
+                      pathname: "/movie-details",
+                      state: {
+                          items: item
+                          },
+                       }}><img className='row__poster' src={item.image.medium} alt="" /></Link></div>
                            
                        )
                    }
