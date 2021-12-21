@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { Component } from "react";
-
+import { connect } from "react-redux";
+import  { buyCake } from '../../Redux'
+ 
 import Cards from "../Shows/Cards";
 import './Game.css'
 
-export default class Games extends Component {
+class Games extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -48,7 +50,7 @@ export default class Games extends Component {
     const { posts, dataLoaded, error, limit } = this.state;
     return (
       <div className="body">
-        <h3 className='left-align'>Movies <i class="fas fa-chevron-right"></i> </h3>
+        <h3 className='left-align'>Movies  <i class="fas fa-chevron-right"></i> </h3>
         <div style={{ borderRadius: "10px" }}>
           <div className="row m-5">
             {dataLoaded ? (
@@ -88,3 +90,16 @@ export default class Games extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return{
+    numOfCakes : state.numOfCakes
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    buyCake : () => dispatch (buyCake())
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Games);

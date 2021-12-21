@@ -1,4 +1,6 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import store from './Redux/Store';
 import './App.css';
 import Footer from './Components/Footer/Footer';
 import Navbar from './Components/Navbar/Navbar';
@@ -15,12 +17,13 @@ import Signin from './Components/Login/SignIn';
 import Signup from './Components/Login/SignUp';
 import Otp from './Components/OTP/Otp';
 import MovieDetails from './Components/MovieDetails/MovieDetails';
+import CakeContainer from './Components/Cake/CakeContainer';
 
 
 
 function App() {
   return (
-   
+   <Provider store={store}>
     <div>
     <Router>
       <Navbar/>
@@ -36,11 +39,13 @@ function App() {
           <Route path="/signup"  component={Signup} />
           <Route path="/otp"  component={Otp} />
           <Route path="/movie-details"  component={MovieDetails} />
+          <Route path="/cake-container"  component={CakeContainer} />
         </Switch>
       <Footer/>
     </Router>
     
     </div>
+    </Provider>
   
   );
 }

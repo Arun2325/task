@@ -19,6 +19,7 @@
 .my-anchor-css-class:hover{
     color: darkgoldenrod;
 }
-.content-css span{
-   
+
+.row{
+    height: 80vh;
 }

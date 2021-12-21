@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Container,Row,Col } from 'react-bootstrap';
 import './MovieDetails.css'
 import ShowMoreText from "react-show-more-text";
+import HoriSlider from '../H-Slider/HoriSlider';
 
 
 class MovieDetails extends Component {
@@ -47,7 +48,9 @@ class MovieDetails extends Component {
                     
                              </Col>
                     </Row>
+                    <h3 className="left-align">Latest Episodes<i class="fas fa-chevron-right"></i> </h3>
                  </Container>
+                 <HoriSlider/>
 
             </div>
         )
